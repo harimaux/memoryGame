@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: rgb(38, 71, 138);
+    /* Fallback for other browsers*/
+    background: -webkit-linear-gradient(to right,
+            rgb(55, 128, 201),
+            rgb(54, 133, 107));
+    background: linear-gradient(to right, rgb(110, 138, 161), rgb(20, 99, 163));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 8em);
+    grid-template-rows: repeat(4, 12em);
+    grid-gap: 1em;
+    perspective: 800px;
+}
+
+section img {
+    margin-left: -64px;
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+
+.face,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.face img {
+    border-radius: 10px;
+}
+
+.back {
+    background-image: url("images/backCard.jpg");
+    z-index: 100;
+    backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+.face {
+    transform: rotateY(-180deg);
+    z-index: -100;
+}
+
+h1 {
+    margin-top: -100px;
+    padding: 0.5em;
+    color: rgb(226, 225, 225);
+}
+
+.yodaImg {
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+}
+
+.vaderImg {
+    position: absolute;
+    right: 0;
+    width: 500px;
+    bottom: 0;
+}
+
+.backImg {
+    position: absolute;
+    width: 1920px;
+    z-index: -100;
+}
+
+.audioBar {
+    position: fixed;
+    bottom: 20px;
+    margin-left: 160px;
+}
+
+.audioBar_2 {
+    position: fixed;
+    bottom: 20px;
+    margin-left: -160px;
+}
